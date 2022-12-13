@@ -2,7 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import dynamic from "next/dynamic"
 
+const MyMap = dynamic(() => import("../components/Map"), { ssr: false })
 
 const Home: NextPage = () => {
 
@@ -228,6 +230,20 @@ const Home: NextPage = () => {
           </div>
         </section>
       </section>
+      <section>
+        <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-2 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <h3 className="text-xl font-bold sm:text-2xl my-5">
+              Main Maps
+            </h3>
+          </div>
+          <div className="mt-8">
+            <div className="h-96 w-full">
+              <MyMap />
+            </div>
+          </div>
+        </div>
+      </section >
       <section>
         <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-2 sm:px-6 lg:px-8">
           <div className="max-w-3xl">

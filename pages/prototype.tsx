@@ -2,21 +2,18 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import dynamic from "next/dynamic"
 
-const MyMap = dynamic(() => import("../components/Map"), { ssr: false })
-
-const Home: NextPage = () => {
+const Prototype: NextPage = () => {
 
   return (
     <div>
-      <header className="bg-theme-white">
+      <header className="bg-theme-white font-monstserrat">
         <div className="mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8">
           <div className="mt-8">
-            <h1 className="text-7xl font-bold text-theme-black ">
+            <h1 className="text-7xl font-montserrat font-bold text-bannerTitle text-mainYellow text-theme-black">
               Coffee Story
             </h1>
-            <p className="mt-1.5 text-md pl-4">
+            <p className="mt-1.5 text-md pl-4 font-montserrat-800">
               Lorem ipsum dolor sit amet, consectetur adipis
             </p>
           </div>
@@ -234,20 +231,6 @@ const Home: NextPage = () => {
         <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-2 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h3 className="text-xl font-bold sm:text-2xl my-5">
-              Main Maps
-            </h3>
-          </div>
-          <div className="mt-8">
-            <div className="h-96 w-full">
-              <MyMap />
-            </div>
-          </div>
-        </div>
-      </section >
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 pb-16 pt-2 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h3 className="text-xl font-bold sm:text-2xl my-5">
               Other Components
             </h3>
             <h6 className="text-sm font-bold py-4">
@@ -313,4 +296,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Prototype

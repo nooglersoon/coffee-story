@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Section from '../components/Contents/Sections/Section'
+import SectionBody from '../components/Contents/Sections/SectionBody'
 
 const Prototype: NextPage = () => {
 
@@ -19,31 +21,15 @@ const Prototype: NextPage = () => {
           </div>
         </div>
       </header>
-      <section>
-        <div className="mx-auto max-w-screen-xl px-4 pb-8 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h3 className="text-xl font-bold sm:text-2xl my-5">
-              Background
-            </h3>
-          </div>
-          <article className="space-y-4 text-gray-500">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-              hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-              minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum
-              explicabo quidem voluptatum voluptas illo accusantium ipsam quis,
-              vel mollitia? Vel provident culpa dignissimos possimus, perferendis
-              consectetur odit accusantium dolorem amet voluptates aliquid,
-              ducimus tempore incidunt quas. Veritatis molestias tempora
-              distinctio voluptates sint! Itaque quasi corrupti, sequi quo odit
-              illum impedit!
-            </p>
-          </article>
-        </div>
-      </section>
+      <Section>
+        <SectionBody />
+      </Section>
+      <Section>
+        <SectionBody />
+      </Section>
+      <Section>
+        <SectionBody />
+      </Section>
       <section>
         <div className="mx-auto max-w-screen-xl px-4 pb-8 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -259,36 +245,20 @@ const Prototype: NextPage = () => {
         </div>
       </section >
 
-      <footer aria-label="Site Footer" className="bg-white">
-        <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-          <div className="pt-8 mt-8 border-t border-gray-100">
-            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-              <p className="text-xs text-left text-gray-500">
-                &copy; 2022. Company Name. All rights reserved.
-              </p>
-
-              <nav aria-label="Footer Navigation - Support">
-                <ul className="flex flex-wrap justify-start gap-4 text-xs lg:justify-end">
-                  <li>
-                    <a href="#" className="text-gray-500 transition hover:opacity-75">
-                      Terms & Conditions
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="text-gray-500 transition hover:opacity-75">
-                      Privacy Policy
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="text-gray-500 transition hover:opacity-75">
-                      Cookies
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+      <footer aria-label="Site Footer" className="bg-mainYellow">
+        <div className="max-w-screen-xl px-10 pb-8 mx-auto sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-4 py-8">
+            <p className="text-heading2 text-left text-black font-montserrat font-bold">
+              Temukan Lebih Banyak
+            </p>
+            <p className="text-body text-left text-black font-montserrat font-regular">
+              Tertarik untuk membaca lebih banyak artikel mengenai rekayasa data spasial?
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            <p className="text-largeCaption text-left text-black font-montserrat font-semibold">
+              &copy; 2022. Rekayasa Data Spasial. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

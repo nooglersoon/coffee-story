@@ -6,6 +6,7 @@ export interface ContentInterface {
 export interface ArticleContentModel {
   articleTitle?: string;
   article: string;
+  articleType?: string; // sutan: a paragraph or a poing?
 }
 
 export interface ImageContentModel {

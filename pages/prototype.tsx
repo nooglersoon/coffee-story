@@ -21,6 +21,8 @@ const Prototype: NextPage = () => {
       </Section>
       <Section>
         <ContentArticle />
+        <ContentArticle />
+        <ContentArticle />
       </Section>
       <Section>
         <ContentImage />

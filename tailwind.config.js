@@ -3,13 +3,14 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./core/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'],
     },
     fontSize: {
-      bannerTitle: `100px`,
+      bannerTitle: `90px`,
       heading1: `48px`,
       heading2: `36px`,
       heading3: `24px`,
@@ -25,9 +26,11 @@ module.exports = {
     extend: {
       colors: {
         mainYellow: '#FFDE5C',
-        mainavy: '#00488D'
+        mainNavy: '#00488D'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-textshadow')
+  ],
 }

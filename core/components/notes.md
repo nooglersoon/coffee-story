@@ -1,0 +1,1 @@
+# Place reusable UI Product Language such as: Navbar, Footer, Button or components which are not related to the domain.

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+    crossorigin=""></script>
+
+    <!-- legend css -->
+    <link rel="stylesheet" href="legend.css">
+    <!-- stamen -->
+    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+
+
+    
+</head>
+<body style="height: 100vh; width: 100vw">
+    
+<div id="map" style="height: 900px; width: 900px"></div>
+<script type="module">
+    // step 1: import the data
+    import data from './data/data.js'
+    // step2: initialise the map
+    var map = L.map('map').setView([-6.224713,106.847774], 12);
+
+    // step3: initialise the basemap options
+    const Carto = L.tileLayer('http://basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png', {
+        attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+    })
+
+    const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+})
+
+    const esri = L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        attribution:'&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, Esri, HERE, Garmin, and the GIS User Community',
+    })
+    
+    const stamenLite = new L.StamenTileLayer("toner-lite"); // from stamen javascript in head
+    const baseMaps = {
+        Carto: Carto,
+        Stamen: stamenLite,
+        Esri: esri,
+        Osm: osm
+    };
+    osm.addTo(map)
+
+    const onEachFeature = (feature, layer) => {
+    // does this feature have a property named popupContent?
+    if (feature.properties && feature.properties.coffee_count) {
+        layer.bindTooltip(feature.properties.coffee_count);
+    }
+}
+
+    const styleMap = (feature) =>{
+        // 'tidak teridentifikasi', 'sangat sedikit', 'banyak', 'sedikit', 'sangat banyak'
+        const total_coffee_shop = feature.properties.coffee_count
+
+        const schema ={
+            'tidak teridentifikasi': '#242424',
+            'ada toko kopi': '#253494',
+            'sedikit': '#2c7fb8',
+            'banyak': '#41b6c4',
+            'sangat banyak': '#ffffcc'
+
+        }
+
+        return {
+            fillColor: schema[total_coffee_shop],
+            stroke: false ,
+            fillOpacity: (total_coffee_shop === 'tidak teridentifikasi') ? 0.2 : 0.6
+        }
+    }
+
+    const dataLayer = L.geoJSON(data, {
+        onEachFeature: onEachFeature,
+        style: styleMap
+    })
+    const layers = L.layerGroup([dataLayer]);
+    var overlayMaps = {
+        "layers": layers
+    };
+    const layerControl = L.control.layers(baseMaps, overlayMaps, {collapsed: false})
+    layerControl.addTo(map);
+    layers.addTo(map)
+
+
+    /*Legend specific*/
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += "<h4>Toko Kopi</h4>";
+  div.innerHTML += '<i style="background: #242424"></i><span>tidak teridentifikasi</span><br>';
+  div.innerHTML += '<i style="background: #253494"></i><span>ada toko kopi</span><br>';
+  div.innerHTML += '<i style="background: #2c7fb8"></i><span>sedikit</span><br>';
+  div.innerHTML += '<i style="background: #41b6c4"></i><span>banyak</span><br>';
+  div.innerHTML += '<i style="background: #ffffcc"></i><span>sangat banyak</span><br>';  
+  return div;
+};
+
+legend.addTo(map);
+</script>
+</body>
+
+
+</html>
+
+

@@ -3,7 +3,7 @@ import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import "leaflet-defaulticon-compatibility";
 import { divIcon } from "leaflet";
-import { BlueDots, Position } from "../components/Annotations/BlueDots"
+import { BlueDots, Position } from "./Annotations/BlueDots"
 
 const Map = () => {
   const position = {

@@ -1,20 +1,24 @@
 import dynamic from "next/dynamic"
 import ContentTitle from "./ContentTitle"
-const MyMap = dynamic(() => import("../../components/Map"), { ssr: false })
+import { MapContentModel } from "../../lib/Contents/Interface/ContentInterface"
+const MyMap = dynamic(() => import("../Map/Map"), { ssr: false })
 
-export default function ContentMap() {
+export default function ContentMap(model: MapContentModel) {
+  const showTitle: boolean = model.mapTitle !== undefined
   return (
     <div>
-      <div className="max-w-3xl">
-        <ContentTitle
-          subTitle={"Lokasi Studi dan Unit Analisis"}
-        />
-      </div>
+      {
+        showTitle ? <div className="max-w-3xl">
+          <ContentTitle
+            subTitle={model.mapTitle!}
+          />
+        </div> : <></>
+      }
       <div className="h-96 w-full">
         <MyMap />
       </div>
       <p className="text-justify text-largeCaption font-montserrat font-regular mt-4 mb-2">
-        Figure 1. Beri Keterangan Disini
+        {`Figure ${model.footer}`}
       </p>
     </div>
   )

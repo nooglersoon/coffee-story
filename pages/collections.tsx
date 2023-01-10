@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import dynamic from "next/dynamic"
 
-const MyMap = dynamic(() => import("../components/Map"), { ssr: false })
+const MyMap = dynamic(() => import("../components/Map/Map"), { ssr: false })
 
 const Home: NextPage = () => {
 

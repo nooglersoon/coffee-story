@@ -1,18 +1,19 @@
 import SectionTitle from "./SectionTitle"
+import SectionInterface from "../../lib/Section/Interface/SectionInterface"
 
 interface MyProps {
   children?: React.ReactNode
 }
 
-export default function Section(props: MyProps) {
+export default function Section(props: MyProps, title: string) {
   return (
     <section>
       <div className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-10 lg:px-10">
-        <div className="max-w-3xl">
+        {/* <div className="max-w-3xl">
           <SectionTitle
-            title={"Metodologi"}
+            title={title}
           />
-        </div>
+        </div> */}
         {props.children}
       </div>
     </section>

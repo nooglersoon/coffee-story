@@ -11,6 +11,13 @@ import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
 import SectionTitle from '../components/Section/SectionTitle'
 
+
+// from Sutan: the contents
+
+import { Paragraphs } from '../ArticleContent/contents/article'
+
+const pengantar = Paragraphs[0]
+
 const Home: NextPage = () => {
   // TODO: Change data flow using json instead of hardcoded in the component
   return (
@@ -24,20 +31,28 @@ const Home: NextPage = () => {
           title="Pengantar"
         />
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={pengantar.content[0].content[0]}
+          articleType={pengantar.content[0].type}
         />
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={pengantar.content[0].content[1]}
+          articleType={pengantar.content[0].type}
+        />
+        <ContentArticle
+          article={pengantar.content[0].content[2]}
+          articleType={pengantar.content[0].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[0]}
+          articleType={pengantar.content[1].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[1]}
+          articleType={pengantar.content[1].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[2]}
+          articleType={pengantar.content[1].type}
         />
       </Section>
 

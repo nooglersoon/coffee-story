@@ -14,12 +14,11 @@ import SectionTitle from '../components/Section/SectionTitle'
 
 // from Sutan: the contents
 
-import { Paragraphs } from '../ArticleContent/contents/article'
+import { Paragraphs } from '../src/contents/article'
 
 const pengantar = Paragraphs[0]
 
 const Home: NextPage = () => {
-  // TODO: Change data flow using json instead of hardcoded in the component
   return (
     <div>
       <Navbar />
@@ -28,7 +27,7 @@ const Home: NextPage = () => {
 
       <Section>
         <SectionTitle
-          title="Pengantar"
+          title={pengantar.heading.toUpperCase()}
         />
         <ContentArticle
           article={pengantar.content[0].content[0]}

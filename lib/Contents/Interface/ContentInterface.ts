@@ -1,3 +1,5 @@
+import { ArticleType } from "./ArticleInterface";
+
 export interface ContentInterface {
   contentTitle?: string;
   contentBody: ArticleContentModel | ImageContentModel | MapContentModel
@@ -6,7 +8,7 @@ export interface ContentInterface {
 export interface ArticleContentModel {
   articleTitle?: string;
   article: string;
-  articleType?: string; // sutan: a paragraph or a poing?
+  articleType?: ArticleType;
 }
 
 export interface ImageContentModel {

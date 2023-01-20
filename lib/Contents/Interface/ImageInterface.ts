@@ -1,7 +1,5 @@
-import { ImageContentModel } from "./ContentInterface";
-
-export interface ImageSection {
-  heading: string;
-  level: number;
-  content: ImageContentModel[];
+export interface ImageContentModel {
+  imageTitle?: string;
+  imageURL: string;
+  footer: string;
 }

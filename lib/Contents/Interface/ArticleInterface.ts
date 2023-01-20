@@ -1,15 +1,7 @@
-export enum ArticleType {
-  Paragraph,
-  Point
-}
+import { ContentType } from "./ContentInterface";
 
-export interface ArticleContent {
-  type: ArticleType;
-  content: string[];
-}
-
-export interface ArticleSection {
-  heading: string;
-  level: number;
-  content: ArticleContent[];
+export interface ArticleContentModel {
+  articleTitle?: string;
+  article: string;
+  contentType?: ContentType;
 }

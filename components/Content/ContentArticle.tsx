@@ -1,13 +1,13 @@
 import ContentTitle from "./ContentTitle"
-import { ArticleContentModel } from "../../lib/Contents/Interface/ContentInterface"
-import { ArticleType } from "../../lib/Contents/Interface/ArticleInterface"
+import { ArticleContentModel } from "../../lib/Contents/Interface/ArticleInterface"
+import { ContentType } from "../../lib/Contents/Interface/ContentInterface"
 
 export default function ContentArticle(model: ArticleContentModel) {
   const showTitle: boolean = model.articleTitle !== undefined;
-  const contentType = model.articleType
+  const contentType = model.contentType
 
   switch (contentType) {
-    case ArticleType.Paragraph:
+    case ContentType.Paragraph:
       return (
         <div>
           {
@@ -24,7 +24,7 @@ export default function ContentArticle(model: ArticleContentModel) {
           </article>
         </div>
       )
-    case ArticleType.Point:
+    case ContentType.Point:
       return (
         <div>
           {

@@ -1,5 +1,5 @@
 import ContentTitle from "./ContentTitle"
-import { ImageContentModel } from "../../lib/Contents/Interface/ContentInterface"
+import { ImageContentModel } from "../../lib/Contents/Interface/ImageInterface"
 
 export default function ContentImage(model: ImageContentModel) {
   const showTitle: boolean = model.imageTitle !== undefined

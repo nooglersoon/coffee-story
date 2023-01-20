@@ -1,24 +1,15 @@
-import { ArticleType } from "./ArticleInterface";
-
-export interface ContentInterface {
-  contentTitle?: string;
-  contentBody: ArticleContentModel | ImageContentModel | MapContentModel
+export enum ContentType {
+  Paragraph,
+  Point
 }
 
-export interface ArticleContentModel {
-  articleTitle?: string;
-  article: string;
-  articleType?: ArticleType;
+export interface ContentSection {
+  heading: string;
+  level: number;
+  content: ContentData[];
 }
 
-export interface ImageContentModel {
-  imageTitle?: string;
-  imageURL: string;
-  footer: string;
-}
-
-export interface MapContentModel {
-  mapTitle?: string;
-  footer: string;
-  // Map Data
+export interface ContentData {
+  type: ContentType;
+  content: string[];
 }

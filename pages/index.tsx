@@ -11,12 +11,10 @@ import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
 import SectionTitle from '../components/Section/SectionTitle'
 
-
-// from Sutan: the contents
-
-import { Paragraphs } from '../src/contents/article'
+import { Paragraphs, PetaAnalisisKopi } from '../src/contents/article'
 
 const pengantar = Paragraphs[0]
+const Peta = Paragraphs[1]
 
 const Home: NextPage = () => {
   return (
@@ -31,27 +29,27 @@ const Home: NextPage = () => {
         />
         <ContentArticle
           article={pengantar.content[0].content[0]}
-          articleType={pengantar.content[0].type}
+          contentType={pengantar.content[0].type}
         />
         <ContentArticle
           article={pengantar.content[0].content[1]}
-          articleType={pengantar.content[0].type}
+          contentType={pengantar.content[0].type}
         />
         <ContentArticle
           article={pengantar.content[0].content[2]}
-          articleType={pengantar.content[0].type}
+          contentType={pengantar.content[0].type}
         />
         <ContentArticle
           article={pengantar.content[1].content[0]}
-          articleType={pengantar.content[1].type}
+          contentType={pengantar.content[1].type}
         />
         <ContentArticle
           article={pengantar.content[1].content[1]}
-          articleType={pengantar.content[1].type}
+          contentType={pengantar.content[1].type}
         />
         <ContentArticle
           article={pengantar.content[1].content[2]}
-          articleType={pengantar.content[1].type}
+          contentType={pengantar.content[1].type}
         />
       </Section>
 
@@ -108,20 +106,27 @@ const Home: NextPage = () => {
 
       <Section>
         <SectionTitle
-          title='Hasil'
+          title={Peta.heading}
         />
         <ContentArticle
           articleTitle='Hasil Analisis'
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={Peta.content[0].content[0]}
+          contentType={Peta.content[0].type}
         />
         <ContentMap
           mapTitle='Peta Sebaran Kopi'
           footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+        <ContentArticle
+          articleTitle='Hasil Analisis'
+          article={Peta.content[0].content[0]}
+          contentType={Peta.content[0].type}
+        />
+        <ContentMap
+          mapTitle='Peta Sebaran Kopi'
+          footer='2. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
         />
       </Section>
 

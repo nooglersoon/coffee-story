@@ -5,13 +5,16 @@ import styles from '../styles/Home.module.css'
 import Section from '../components/Section/Section'
 import ContentArticle from '../components/Content/ContentArticle'
 import ContentImage from '../components/Content/ContentImage'
-import Banner from '../components/Banner/Banner'
+import TopBanner from '../components/Banner/TopBanner'
 import Footer from '../core/components/Navigations/Footer'
 import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
 import SectionTitle from '../components/Section/SectionTitle'
 
 import { Paragraphs, PetaAnalisisKopi } from '../src/contents/article'
+import ContributorSection from '../components/Contributors/ContributorSection'
+import SectionSeparators from '../core/components/SectionSeparators'
+import IntroBanner from '../components/Banner/IntroBanner'
 
 const pengantar = Paragraphs[0]
 const Peta = Paragraphs[1]
@@ -20,9 +23,8 @@ const Home: NextPage = () => {
   return (
     <div>
       <Navbar />
-
-      <Banner />
-
+      <TopBanner />
+      <IntroBanner />
       <Section>
         <SectionTitle
           title={pengantar.heading.toUpperCase()}
@@ -129,7 +131,8 @@ const Home: NextPage = () => {
           mapProperties={PetaAnalisisKopi}
         />
       </Section>
-
+      <SectionSeparators />
+      <ContributorSection />
       <Footer />
     </div >
   )

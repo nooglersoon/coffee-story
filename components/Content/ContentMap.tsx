@@ -14,7 +14,7 @@ export default function ContentMap(model: MapContentModel) {
           />
         </div> : <></>
       }
-      <div className="h-96 w-full">
+      <div className="h-screen w-full mx-auto">
         <MyMap
           data={model.mapProperties.data}
           style={model.mapProperties.style}

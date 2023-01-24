@@ -5,39 +5,57 @@ import styles from '../styles/Home.module.css'
 import Section from '../components/Section/Section'
 import ContentArticle from '../components/Content/ContentArticle'
 import ContentImage from '../components/Content/ContentImage'
-import Banner from '../components/Banner/Banner'
+import TopBanner from '../components/Banner/TopBanner'
 import Footer from '../core/components/Navigations/Footer'
 import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
 import SectionTitle from '../components/Section/SectionTitle'
 
+import { Paragraphs, PetaAnalisisKopi } from '../src/contents/article'
+import ContributorSection from '../components/Contributors/ContributorSection'
+import SectionSeparators from '../core/components/SectionSeparators'
+import IntroBanner from '../components/Banner/IntroBanner'
+import ScrollToTop from '../core/components/Navigations/ScrollToTop'
+
+const pengantar = Paragraphs[0]
+const Peta = Paragraphs[1]
+
 const Home: NextPage = () => {
-  // TODO: Change data flow using json instead of hardcoded in the component
   return (
     <div>
       <Navbar />
 
-      <Banner />
+      <TopBanner />
+
+      <IntroBanner />
 
       <Section>
         <SectionTitle
-          title="Pengantar"
+          title={pengantar.heading.toUpperCase()}
         />
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={pengantar.content[0].content[0]}
+          contentType={pengantar.content[0].type}
         />
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={pengantar.content[0].content[1]}
+          contentType={pengantar.content[0].type}
+        />
+        <ContentArticle
+          article={pengantar.content[0].content[2]}
+          contentType={pengantar.content[0].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[0]}
+          contentType={pengantar.content[1].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[1]}
+          contentType={pengantar.content[1].type}
+        />
+        <ContentArticle
+          article={pengantar.content[1].content[2]}
+          contentType={pengantar.content[1].type}
         />
       </Section>
 
@@ -94,23 +112,32 @@ const Home: NextPage = () => {
 
       <Section>
         <SectionTitle
-          title='Hasil'
+          title={Peta.heading}
         />
         <ContentArticle
           articleTitle='Hasil Analisis'
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={Peta.content[0].content[0]}
+          contentType={Peta.content[0].type}
         />
         <ContentMap
           mapTitle='Peta Sebaran Kopi'
           footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+        <ContentArticle
+          articleTitle='Hasil Analisis'
+          article={Peta.content[0].content[0]}
+          contentType={Peta.content[0].type}
+        />
+        <ContentMap
+          mapTitle='Peta Sebaran Kopi'
+          footer='2. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
         />
       </Section>
 
+      <ContributorSection />
+      <ScrollToTop />
       <Footer />
     </div >
   )

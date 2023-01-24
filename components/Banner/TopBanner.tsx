@@ -1,6 +1,6 @@
 import MainButton from "../../core/components/Buttons/MainButton"
 
-export default function Banner() {
+export default function TopBanner() {
   return (
     <section className="overflow-hidden bg-mainYellow sm:grid sm:grid-cols-2 px-4 py-4 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.6)]">
       <div className="p-8 md:p-12 lg:px-16 lg:py-24 mx-auto my-auto">

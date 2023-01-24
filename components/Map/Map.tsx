@@ -8,7 +8,7 @@ const { BaseLayer } = LayersControl;
 
 export default function Map(model: MapProperties) {
   return (
-    <MapContainer center={[-6.224713, 106.847774]} zoom={11} scrollWheelZoom={true} style={{ height: "100%", width: "100%" }} className="rounded border-slate-100">
+    <MapContainer center={[-6.224713, 106.847774]} zoom={11} scrollWheelZoom={true} style={{ height: "100%", width: "100%" }} className="rounded border-slate-100 z-0">
       <LayersControl>
         <BaseLayer checked name="Carto">
           <TileLayer

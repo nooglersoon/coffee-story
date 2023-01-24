@@ -17,6 +17,7 @@ module.exports = {
       heading4: `18px`,
       body: `16px`,
       largeCaption: `14px`,
+      small: `12px`
     },
     fontWeight: {
       regular: 400,

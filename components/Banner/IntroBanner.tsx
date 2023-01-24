@@ -1,6 +1,23 @@
 import SectionSeparators from "../../core/components/SectionSeparators"
+import { BannerBulletsInterface, BannerBullets, BannerBulletsType } from "./BannerBullets"
 
 export default function IntroBanner() {
+
+  let blueBullet: BannerBulletsInterface = {
+    content: "Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya",
+    type: BannerBulletsType.Blue
+  }
+
+  let yellowBullet: BannerBulletsInterface = {
+    content: "Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya",
+    type: BannerBulletsType.Yellow
+  }
+
+  let toscaBullet: BannerBulletsInterface = {
+    content: "Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya",
+    type: BannerBulletsType.Tosca
+  }
+
   return (
     <section>
       <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
@@ -11,29 +28,20 @@ export default function IntroBanner() {
                 Mau buka toko kopi baru?
               </p>
 
-              <div className="mt-8 md:mt-8">
-                <article className="space-y-4 text-black my-4">
-                  <p className="text-justify text-body font-montserrat font-regular">
-                    Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya
-                  </p>
-                </article>
-              </div>
+              <BannerBullets
+                content={"Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya"}
+                type={BannerBulletsType.Blue}
+              />
 
-              <div className="mt-8 md:mt-8">
-                <article className="space-y-4 text-black my-4">
-                  <p className="text-justify text-body font-montserrat font-regular">
-                    Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya
-                  </p>
-                </article>
-              </div>
+              <BannerBullets
+                content={"Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya"}
+                type={BannerBulletsType.Yellow}
+              />
 
-              <div className="mt-8 md:mt-8">
-                <article className="space-y-4 text-black my-4">
-                  <p className="text-justify text-body font-montserrat font-regular">
-                    Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya
-                  </p>
-                </article>
-              </div>
+              <BannerBullets
+                content={"Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya"}
+                type={BannerBulletsType.Tosca}
+              />
 
             </div>
           </div>

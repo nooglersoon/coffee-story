@@ -1,9 +1,11 @@
+import SectionSeparators from "../../core/components/SectionSeparators";
 import ContributorCard from "./ContributorCard";
 
 export default function ContributorSection() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-10 lg:px-10">
+        <SectionSeparators />
         <div className="items-end justify-between sm:flex">
           <div className="max-w-xl">
             <p className="text-heading3 font-montserrat font-bold md:text-heading2 my-5">

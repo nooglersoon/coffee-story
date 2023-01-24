@@ -131,7 +131,6 @@ const Home: NextPage = () => {
           mapProperties={PetaAnalisisKopi}
         />
       </Section>
-      <SectionSeparators />
       <ContributorSection />
       <Footer />
     </div >

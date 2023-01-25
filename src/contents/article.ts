@@ -10,6 +10,12 @@ const onEachFeature: MapOnEachFeature = (feature: any, layer: any) => {
     }
 }
 
+const onEachFeature2: MapOnEachFeature = (feature: any, layer: any) => {
+    if (feature.properties && feature.properties.quadrant_population) {
+        layer.bindTooltip(`quadrant: ${feature.properties.quadrant_population}`);
+    }
+}
+
 const styleMap = (feature: any): MapStyleProperies => {
     const total_coffee_shop: string = feature.properties.coffee_count
     const schema: MapColorScheme = {
@@ -26,10 +32,32 @@ const styleMap = (feature: any): MapStyleProperies => {
     }
 }
 
+const styleMap2 = (feature: any): MapStyleProperies => {
+    const quadrant_population: string = feature.properties.quadrant_population
+    const schema: MapColorScheme = {
+        1: '#242424',
+        2: '#253494',
+        3: '#2c7fb8',
+        4: '#41b6c4',
+        // 'sangat banyak': '#ffffcc'
+    }
+    return {
+        fillColor: schema[quadrant_population],
+        stroke: false,
+        fillOpacity: 0.6
+    }
+}
+
 export const PetaAnalisisKopi: MapProperties = {
     data: Data,
     style: styleMap,
     onEachFeature: onEachFeature
+}
+
+export const PetaAnalisisKopi2: MapProperties = {
+    data: Data,
+    style: styleMap2,
+    onEachFeature: onEachFeature2
 }
 
 export const Paragraphs: ContentSection[] = [

@@ -5,6 +5,10 @@ const nextConfig = {
 }
 
 module.exports = {
+  images: {
+    unoptimized: true
+  },
+  trailingSlash: true,
   async rewrites() {
     return [
       {

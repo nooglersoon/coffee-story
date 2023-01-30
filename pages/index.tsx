@@ -10,7 +10,7 @@ import Footer from '../core/components/Navigations/Footer'
 import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
 
-import { Paragraphs, PetaAnalisisKopi } from '../src/contents/article'
+import { Paragraphs, PetaAnalisisKopi, PetaAnalisisKopi2 } from '../src/contents/article'
 import ContributorSection from '../components/Contributors/ContributorSection'
 import IntroBanner from '../components/Banner/IntroBanner'
 import ScrollToTop from '../core/components/Navigations/ScrollToTop'
@@ -130,7 +130,7 @@ const Home: NextPage = () => {
         <ContentMap
           mapTitle='Peta Sebaran Kopi'
           footer='2. Peta Sebaran Kopi Menggunakan Analisis GIS'
-          mapProperties={PetaAnalisisKopi}
+          mapProperties={PetaAnalisisKopi2}
         />
       </Section>
 

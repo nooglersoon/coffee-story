@@ -18,7 +18,7 @@ const ScrollToTop = () => {
   }
   return (
     <div
-      className={`z-50 fixed right-8 bottom-8 flex-col gap-3 hidden ${show ? 'sm:flex' : 'sm:hidden'}`}
+      className={`z-50 fixed right-8 bottom-8 flex-col gap-3 ${show ? 'flex' : 'hidden'}`}
     >
       <button
         aria-label="Scroll To Top"

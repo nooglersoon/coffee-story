@@ -9,11 +9,9 @@ import TopBanner from '../components/Banner/TopBanner'
 import Footer from '../core/components/Navigations/Footer'
 import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
-import SectionTitle from '../components/Section/SectionTitle'
 
 import { Paragraphs, PetaAnalisisKopi } from '../src/contents/article'
 import ContributorSection from '../components/Contributors/ContributorSection'
-import SectionSeparators from '../core/components/SectionSeparators'
 import IntroBanner from '../components/Banner/IntroBanner'
 import ScrollToTop from '../core/components/Navigations/ScrollToTop'
 
@@ -29,10 +27,10 @@ const Home: NextPage = () => {
 
       <IntroBanner />
 
-      <Section>
-        <SectionTitle
-          title={pengantar.heading.toUpperCase()}
-        />
+      <Section
+        isOpen={true}
+        title={pengantar.heading.toUpperCase()}
+      >
         <ContentArticle
           article={pengantar.content[0].content[0]}
           contentType={pengantar.content[0].type}
@@ -59,10 +57,10 @@ const Home: NextPage = () => {
         />
       </Section>
 
-      <Section>
-        <SectionTitle
-          title="Tujuan dan Sasaran"
-        />
+      <Section
+        isOpen={true}
+        title={"Tujuan dan Sasaran".toUpperCase()}
+      >
         <ContentArticle
           article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
         hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
@@ -81,10 +79,10 @@ const Home: NextPage = () => {
         />
       </Section>
 
-      <Section>
-        <SectionTitle
-          title='Metodologi'
-        />
+      <Section
+        isOpen={true}
+        title={"Metodologi Analisis".toUpperCase()}
+      >
         <ContentArticle
           articleTitle='Data dan Pengambilan Data'
           article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
@@ -110,10 +108,10 @@ const Home: NextPage = () => {
         />
       </Section>
 
-      <Section>
-        <SectionTitle
-          title={Peta.heading}
-        />
+      <Section
+        isOpen={true}
+        title={"Analisis".toUpperCase()}
+      >
         <ContentArticle
           articleTitle='Hasil Analisis'
           article={Peta.content[0].content[0]}

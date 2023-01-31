@@ -14,6 +14,7 @@ import { Paragraphs, PetaAnalisisKopi, PetaAnalisisKopi2 } from '../src/contents
 import ContributorSection from '../components/Contributors/ContributorSection'
 import IntroBanner from '../components/Banner/IntroBanner'
 import ScrollToTop from '../core/components/Navigations/ScrollToTop'
+import FloatingMenu from '../core/components/Navigations/FloatingMenu'
 
 const pengantar = Paragraphs[0]
 const Peta = Paragraphs[1]
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
       <TopBanner />
 
       <IntroBanner />
-
+      <FloatingMenu />
       <Section
         isOpen={true}
         title={pengantar.heading.toUpperCase()}
@@ -133,7 +134,6 @@ const Home: NextPage = () => {
           mapProperties={PetaAnalisisKopi2}
         />
       </Section>
-
       <ContributorSection />
       <ScrollToTop />
       <Footer />

@@ -1,5 +1,7 @@
 import SectionSeparators from "../../core/components/SectionSeparators"
 import { BannerBulletsInterface, BannerBullets, BannerBulletsType } from "./BannerBullets"
+import ContentMap from "../Content/ContentMap"
+import { PetaAnalisisKopi2 } from "../../src/contents/article"
 
 export default function IntroBanner() {
 
@@ -47,11 +49,16 @@ export default function IntroBanner() {
           </div>
 
           <div className="grid grid-cols-1">
-            <img
+            {/* <img
               alt="Intro"
               src="./shared/intro.png"
               className=" object-none md:object-cover w-96 sm:w-full h-96 md:h-5/6 mx-auto my-auto py-4"
-            />
+            /> */}
+            <ContentMap
+          mapTitle=''
+          footer=''
+          mapProperties={PetaAnalisisKopi2}
+        />
             {/* object-none sm:object-cover md:object-contain sm:h-96 md:h-full h-full mx-auto my-auto py-8 */}
           </div>
         </div>

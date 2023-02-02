@@ -4,7 +4,7 @@ import ContributorCard from "./ContributorCard";
 export default function ContributorSection() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-10 lg:px-10">
+      <div className="mx-auto max-w-screen-xl px-6 py-12 sm:px-10 lg:px-10">
         <SectionSeparators />
         <div className="items-end justify-between sm:flex">
           <div className="max-w-xl">

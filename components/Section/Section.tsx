@@ -10,7 +10,7 @@ interface MyProps {
 export default function Section(props: MyProps) {
   return (
     <section>
-      <div className="mx-auto max-w-screen-xl px-6 py-2 sm:px-10 lg:px-10">
+      <div className="mx-auto max-w-screen-md px-10 py-2 sm:px-10 lg:px-30">
         <details className="group [&_summary::-webkit-details-marker]:hidden" open>
           <summary className="flex items-center justify-between cursor-pointer">
             <div className="flex-row w-full">

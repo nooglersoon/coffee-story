@@ -1,10 +1,22 @@
-import SectionSeparators from "../SectionSeparators"
+import { useEffect, useState } from 'react'
 
 const FloatingMenu = () => {
 
+  const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const handleWindowScroll = () => {
+      if (window.scrollY > 1700) setShow(true)
+      else setShow(false)
+    }
+
+    window.addEventListener('scroll', handleWindowScroll)
+    return () => window.removeEventListener('scroll', handleWindowScroll)
+  }, [])
+
   return (
     <div
-      className={`z-50 fixed left-8 top-20 w-56 sm:hidden md:flex`}
+      className={`z-50 fixed left-8 top-20 w-64 hidden ${show ? ' sm:hidden xl:flex' : 'sm:hidden xl:hidden'}`}
     >
       <div
         className="grid align-center gap-8 bg-white pl-6 pr-16 pt-5 pb-10 transition-all shadow-lg"

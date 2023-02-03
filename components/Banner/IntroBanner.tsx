@@ -1,7 +1,10 @@
-import SectionSeparators from "../../core/components/SectionSeparators"
 import { BannerBulletsInterface, BannerBullets, BannerBulletsType } from "./BannerBullets"
 
-export default function IntroBanner() {
+interface IntroBannerProps {
+  children?: React.ReactNode
+}
+
+export default function IntroBanner(props: IntroBannerProps) {
 
   let blueBullet: BannerBulletsInterface = {
     content: "Apabila toko kopi mengincar trend dan merasa memiliki kemampuan bersaing dengan toko kopi lainnya",
@@ -47,15 +50,11 @@ export default function IntroBanner() {
           </div>
 
           <div className="grid grid-cols-1">
-            <img
-              alt="Intro"
-              src="./shared/intro.png"
-              className=" object-none md:object-cover w-96 sm:w-full h-96 md:h-5/6 mx-auto my-auto py-4"
-            />
-            {/* object-none sm:object-cover md:object-contain sm:h-96 md:h-full h-full mx-auto my-auto py-8 */}
+            {
+              props.children
+            }
           </div>
         </div>
-        <SectionSeparators />
       </div>
     </section>
   )

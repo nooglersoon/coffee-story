@@ -28,9 +28,11 @@ const FloatingMenu = (props: { models: FloatingMenuModel[] }) => {
         {
           props.models.map((model) => {
             return (
-              <Link to={model.id} spy={true} smooth={true} key={model.id}>
-                <p className='font-regular font-montserrat text-small text-black'>{model.title}</p>
-              </Link>
+              <button className="text-left">
+                <Link to={model.id} spy={true} smooth={true} key={model.id}>
+                  <p className='font-regular font-montserrat text-small text-black'>{model.title}</p>
+                </Link>
+              </button>
             )
           })
         }

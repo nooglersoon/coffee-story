@@ -5,6 +5,7 @@ const MyMap = dynamic(() => import("../Map/Map"), { ssr: false })
 
 export default function ContentMap(model: MapContentModel) {
   const showTitle: boolean = model.mapTitle !== undefined
+  const showFooter: boolean = model.footer !== ''
   return (
     <div>
       {
@@ -20,9 +21,11 @@ export default function ContentMap(model: MapContentModel) {
           style={model.mapProperties.style}
           onEachFeature={model.mapProperties.onEachFeature} />
       </div>
-      <p className="text-justify text-largeCaption font-montserrat font-regular mt-4 mb-2">
-        {`Figure ${model.footer}`}
-      </p>
+      {
+        showFooter ? <p className="text-justify text-largeCaption font-montserrat font-regular mt-4 mb-2">
+          {`Figure ${model.footer}`}
+        </p> : <></>
+      }
     </div>
   )
 }

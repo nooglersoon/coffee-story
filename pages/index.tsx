@@ -20,7 +20,11 @@ import FloatingMenu from '../core/components/Navigations/FloatingMenu'
 import { Paragraphs, PetaAnalisisKopi, PetaAnalisisKopi2 } from '../src/contents/article'
 
 const pengantar = Paragraphs[0]
-const Peta = Paragraphs[1]
+const pengambilandata = Paragraphs[1]
+const metodologi = Paragraphs[2]
+const hasilanalisis = Paragraphs[3]
+const penduduk = Paragraphs[4]
+const korelasi = Paragraphs[5]
 
 const Home: NextPage = () => {
   return (
@@ -29,32 +33,39 @@ const Home: NextPage = () => {
 
       <TopBanner />
 
-      <IntroBanner />
+      <IntroBanner>
+        <ContentMap
+          mapTitle=''
+          footer=''
+          mapProperties={PetaAnalisisKopi2}
+        />
+      </IntroBanner>
       <FloatingMenu
         models={[
           {
-            id: 'pengantar',
-            title: 'Pengantar'
+            id: pengantar.heading.toLowerCase(),
+            title: pengantar.heading
           },
           {
-            id: 'tujuanDanSasaran',
-            title: 'Tujuan dan Sasaran'
+            id: pengambilandata.heading.toLowerCase(),
+            title: pengambilandata.heading
           }, {
-            id: 'metodologi',
-            title: 'Metodologi'
+            id: metodologi.heading.toLowerCase(),
+            title: metodologi.heading
           }
           , {
-            id: 'hasil',
-            title: 'Hasil'
+            id: hasilanalisis.heading.toLowerCase(),
+            title: hasilanalisis.heading
           }, {
-            id: 'temuan',
-            title: 'Temuan'
+            id: penduduk.heading.toLowerCase(),
+            title: penduduk.heading
           }, {
-            id: 'SaranPemilihanLokasi',
-            title: 'Saran Pemilihan Lokasi'
+            id: korelasi.heading.toLowerCase(),
+            title: korelasi.heading
           }
         ]}
       />
+
       <Section
         isOpen={true}
         title={pengantar.heading.toUpperCase()}
@@ -88,66 +99,51 @@ const Home: NextPage = () => {
 
       <Section
         isOpen={true}
-        title={"Tujuan dan Sasaran".toUpperCase()}
-        id='tujuanDanSasaran'
+        title={"Pengambilan Data".toUpperCase()}
+        id={pengambilandata.heading.toLowerCase()}
       >
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={pengambilandata.content[0].content[0]}
+          contentType={pengambilandata.content[0].type}
+        />
+
+        <ContentArticle
+          article={pengambilandata.content[0].content[1]}
+          contentType={pengambilandata.content[0].type}
+        />
+        <ContentMap
+          mapTitle='Lingkup Analisis Artikel'
+          footer='Lingkup Analisis'
+          mapProperties={PetaAnalisisKopi}
+        />
+
+
+      </Section>
+
+      <Section
+        isOpen={true}
+        title={"Metodologi".toUpperCase()}
+        id={metodologi.heading.toLowerCase()}
+      >
+        <ContentArticle
+          article={metodologi.content[0].content[0]}
+          contentType={metodologi.content[0].type}
         />
         <ContentArticle
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
+          article={metodologi.content[0].content[1]}
+          contentType={metodologi.content[0].type}
         />
       </Section>
 
       <Section
         isOpen={true}
-        title={"Metodologi Analisis".toUpperCase()}
-        id='metodologi'
-      >
-        <ContentArticle
-          articleTitle='Data dan Pengambilan Data'
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
-        />
-        <ContentImage
-          imageTitle='Lokasi Studi dan Unit Analisis'
-          imageURL='https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
-          footer='1. Image'
-        />
-        <ContentArticle
-          articleTitle='Metodologi analisis'
-          article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
-        hic atque tenetur quis eius quos ea neque sunt, accusantium soluta
-        minus veniam tempora deserunt? Molestiae eius quidem quam repellat.'
-        />
-      </Section>
-
-      <Section
-        isOpen={true}
-        title={"Analisis".toUpperCase()}
-        id='hasil'
+        title={"Bagaimana Persebaran Toko Kopi di Jakarta?".toUpperCase()}
+        id={hasilanalisis.heading.toLowerCase()}
       >
         <ContentArticle
           articleTitle='Hasil Analisis'
-          article={Peta.content[0].content[0]}
-          contentType={Peta.content[0].type}
+          article={hasilanalisis.content[0].content[0]}
+          contentType={hasilanalisis.content[0].type}
         />
         <ContentMap
           mapTitle='Peta Sebaran Kopi'
@@ -155,16 +151,93 @@ const Home: NextPage = () => {
           mapProperties={PetaAnalisisKopi}
         />
         <ContentArticle
-          articleTitle='Hasil Analisis'
-          article={Peta.content[0].content[0]}
-          contentType={Peta.content[0].type}
+          articleTitle=''
+          article={hasilanalisis.content[0].content[1]}
+          contentType={hasilanalisis.content[0].type}
         />
         <ContentMap
-          mapTitle='Peta Sebaran Kopi'
-          footer='2. Peta Sebaran Kopi Menggunakan Analisis GIS'
-          mapProperties={PetaAnalisisKopi2}
+          mapTitle='Peta Hotspot'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[2]}
+          contentType={hasilanalisis.content[0].type}
+        />
+
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[3]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[4]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        <ContentMap
+          mapTitle='Peta Aglomerasi'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[5]}
+          contentType={hasilanalisis.content[0].type}
+        />
+
+      </Section>
+
+      <Section
+        isOpen={true}
+        title={"Penduduk Jakarta Di Mana?".toUpperCase()}
+        id={penduduk.heading.toLowerCase()}
+      >
+
+        <ContentArticle
+          articleTitle=''
+          article={penduduk.content[0].content[0]}
+          contentType={penduduk.content[0].type}
+        />
+
+        <ContentMap
+          mapTitle='Peta Penduduk'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+
+
+        <ContentArticle
+          articleTitle=''
+          article={penduduk.content[0].content[1]}
+          contentType={penduduk.content[0].type}
+        />
+
+        <ContentMap
+          mapTitle='Peta Penduduk'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+
+
+
+      </Section>
+
+
+      <Section
+        isOpen={true}
+        title={"Hubungan Penduduk & Toko Kopi".toUpperCase()}
+        id={korelasi.heading.toLowerCase()}
+      >
+
+        <ContentArticle
+          articleTitle=''
+          article={korelasi.content[0].content[0]}
+          contentType={korelasi.content[0].type}
         />
       </Section>
+
       <ContributorSection />
       <ScrollToTop />
       <Footer />

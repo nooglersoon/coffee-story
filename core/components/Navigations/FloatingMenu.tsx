@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
+import FloatingMenuModel from '../../../lib/FloatingMenu/FloatingMenuModel'
+import { Link } from 'react-scroll'
 
-const FloatingMenu = () => {
+const FloatingMenu = (props: { models: FloatingMenuModel[] }) => {
 
   const [show, setShow] = useState(false)
 
@@ -23,12 +25,15 @@ const FloatingMenu = () => {
       >
         <p className='font-semibold font-montserrat text-medium text-black'>Pada laman ini</p>
         <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700"></hr>
-        <p className='font-regular font-montserrat text-small text-black'>Pengantar</p>
-        <p className='font-regular font-montserrat text-small text-black'>Tujuan dan Sasaran</p>
-        <p className='font-regular font-montserrat text-small text-black'>Metodologi</p>
-        <p className='font-regular font-montserrat text-small text-black'>Hasil</p>
-        <p className='font-regular font-montserrat text-small text-black'>Temuan</p>
-        <p className='font-regular font-montserrat text-small text-black'>Saran Pemilihan Lokasi</p>
+        {
+          props.models.map((model) => {
+            return (
+              <Link to={model.id} spy={true} smooth={true} key={model.id}>
+                <p className='font-regular font-montserrat text-small text-black'>{model.title}</p>
+              </Link>
+            )
+          })
+        }
       </div>
     </div>
   )

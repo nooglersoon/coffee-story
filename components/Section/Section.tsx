@@ -5,11 +5,12 @@ interface MyProps {
   children?: React.ReactNode
   isOpen: boolean
   title: string
+  id: string
 }
 
 export default function Section(props: MyProps) {
   return (
-    <section>
+    <section id={props.id}>
       <div className="mx-auto max-w-screen-md px-10 py-2 sm:px-10 lg:px-30">
         <details className="group [&_summary::-webkit-details-marker]:hidden" open>
           <summary className="flex items-center justify-between cursor-pointer">

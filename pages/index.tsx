@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+
+// Components
 import Section from '../components/Section/Section'
 import ContentArticle from '../components/Content/ContentArticle'
 import ContentImage from '../components/Content/ContentImage'
@@ -9,12 +11,13 @@ import TopBanner from '../components/Banner/TopBanner'
 import Footer from '../core/components/Navigations/Footer'
 import Navbar from '../core/components/Navigations/Navbar'
 import ContentMap from '../components/Content/ContentMap'
-
-import { Paragraphs, PetaAnalisisKopi, PetaAnalisisKopi2 } from '../src/contents/article'
 import ContributorSection from '../components/Contributors/ContributorSection'
 import IntroBanner from '../components/Banner/IntroBanner'
 import ScrollToTop from '../core/components/Navigations/ScrollToTop'
 import FloatingMenu from '../core/components/Navigations/FloatingMenu'
+
+// Data
+import { Paragraphs, PetaAnalisisKopi, PetaAnalisisKopi2 } from '../src/contents/article'
 
 const pengantar = Paragraphs[0]
 const Peta = Paragraphs[1]
@@ -27,10 +30,35 @@ const Home: NextPage = () => {
       <TopBanner />
 
       <IntroBanner />
-      <FloatingMenu />
+      <FloatingMenu
+        models={[
+          {
+            id: 'pengantar',
+            title: 'Pengantar'
+          },
+          {
+            id: 'tujuanDanSasaran',
+            title: 'Tujuan dan Sasaran'
+          }, {
+            id: 'metodologi',
+            title: 'Metodologi'
+          }
+          , {
+            id: 'hasil',
+            title: 'Hasil'
+          }, {
+            id: 'temuan',
+            title: 'Temuan'
+          }, {
+            id: 'SaranPemilihanLokasi',
+            title: 'Saran Pemilihan Lokasi'
+          }
+        ]}
+      />
       <Section
         isOpen={true}
         title={pengantar.heading.toUpperCase()}
+        id='pengantar'
       >
         <ContentArticle
           article={pengantar.content[0].content[0]}
@@ -61,6 +89,7 @@ const Home: NextPage = () => {
       <Section
         isOpen={true}
         title={"Tujuan dan Sasaran".toUpperCase()}
+        id='tujuanDanSasaran'
       >
         <ContentArticle
           article='Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut qui
@@ -83,6 +112,7 @@ const Home: NextPage = () => {
       <Section
         isOpen={true}
         title={"Metodologi Analisis".toUpperCase()}
+        id='metodologi'
       >
         <ContentArticle
           articleTitle='Data dan Pengambilan Data'
@@ -112,6 +142,7 @@ const Home: NextPage = () => {
       <Section
         isOpen={true}
         title={"Analisis".toUpperCase()}
+        id='hasil'
       >
         <ContentArticle
           articleTitle='Hasil Analisis'

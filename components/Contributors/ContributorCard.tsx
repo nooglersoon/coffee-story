@@ -1,4 +1,4 @@
-import { ContributorCardModel } from "../../lib/Contributor/ContributorCardInterface"
+import { ContributorCardModel } from "../../lib/Contributor/Interface/ContributorCardInterface"
 
 export default function ContributorCard(model: ContributorCardModel) {
   return (

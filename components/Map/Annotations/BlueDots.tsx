@@ -1,4 +1,4 @@
-import { MapContainer, TileLayer, Marker, Popup, SVGOverlay } from 'react-leaflet'
+import { Marker } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css'
 import "leaflet-defaulticon-compatibility";

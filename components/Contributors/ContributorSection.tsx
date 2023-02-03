@@ -4,7 +4,7 @@ import ContributorCard from "./ContributorCard";
 export default function ContributorSection() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-6 pb-12 sm:px-10 lg:px-10">
+      <div className="mx-auto max-w-screen-lg px-10 py-2 sm:px-10 lg:px-30">
         <SectionSeparators />
         <div className="items-end justify-between sm:flex">
           <div className="max-w-xl">
@@ -35,7 +35,7 @@ export default function ContributorSection() {
           />
           <ContributorCard
             name={"Fauzi Achmad"}
-            imageURL={"https://avatars.dicebear.com/v2/male/adb21bd3744845a731047ed351d6c8e8.svg"}
+            imageURL={"./shared/contributors/aji.png"}
             occupation={"Front End Engineer"} />
         </div>
       </div>

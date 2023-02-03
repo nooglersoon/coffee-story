@@ -35,7 +35,7 @@ export default function ContributorSection() {
           />
           <ContributorCard
             name={"Fauzi Achmad"}
-            imageURL={"https://avatars.dicebear.com/v2/male/adb21bd3744845a731047ed351d6c8e8.svg"}
+            imageURL={"./shared/contributors/aji.png"}
             occupation={"Front End Engineer"} />
         </div>
       </div>

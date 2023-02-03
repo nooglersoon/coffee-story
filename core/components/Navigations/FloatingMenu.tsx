@@ -28,8 +28,8 @@ const FloatingMenu = (props: { models: FloatingMenuModel[] }) => {
         {
           props.models.map((model) => {
             return (
-              <button className="text-left">
-                <Link to={model.id} spy={true} smooth={true} key={model.id}>
+              <button className="text-left" key={model.title.toLowerCase()}>
+                <Link to={model.title.toLowerCase()} spy={true} smooth={true}>
                   <p className='font-regular font-montserrat text-small text-black'>{model.title}</p>
                 </Link>
               </button>

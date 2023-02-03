@@ -1,5 +1,4 @@
 import SectionTitle from "./SectionTitle"
-import SectionInterface from "../../lib/Section/Interface/SectionInterface"
 
 interface MyProps {
   children?: React.ReactNode

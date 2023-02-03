@@ -1,4 +1,6 @@
 import { BannerBulletsInterface, BannerBullets, BannerBulletsType } from "./BannerBullets"
+import ContentMap from "../Content/ContentMap"
+import { PetaAnalisisKopi2 } from "../../src/contents/article"
 
 interface IntroBannerProps {
   children?: React.ReactNode

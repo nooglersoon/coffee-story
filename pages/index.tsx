@@ -119,10 +119,13 @@ const Home: NextPage = () => {
           article={metodologi.content[0].content[0]}
           contentType={metodologi.content[0].type}
         />
+
         <ContentArticle
           article={metodologi.content[0].content[1]}
           contentType={metodologi.content[0].type}
         />
+
+        
       </Section>
 
       <Section
@@ -226,6 +229,82 @@ const Home: NextPage = () => {
           article={korelasi.content[0].content[0]}
           contentType={korelasi.content[0].type}
         />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[2]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[3]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[4]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        <ContentMap
+          mapTitle='Peta Aglomerasi'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+        <ContentArticle
+          articleTitle=''
+          article={hasilanalisis.content[0].content[5]}
+          contentType={hasilanalisis.content[0].type}
+        />
+        
+      </Section>
+
+      <Section
+        isOpen={true}
+        title={"Penduduk Jakarta Di Mana?".toUpperCase()}
+      >
+
+    <ContentArticle
+              articleTitle=''
+              article={penduduk.content[0].content[0]}
+              contentType={penduduk.content[0].type}
+            />
+
+<ContentMap
+          mapTitle='Peta Penduduk'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+
+
+<ContentArticle
+              articleTitle=''
+              article={penduduk.content[0].content[1]}
+              contentType={penduduk.content[0].type}
+            />
+
+<ContentMap
+          mapTitle='Peta Penduduk'
+          footer='1. Peta Sebaran Kopi Menggunakan Analisis GIS'
+          mapProperties={PetaAnalisisKopi}
+        />
+
+
+
+      </Section>
+
+
+      <Section
+        isOpen={true}
+        title={"Hubungan Penduduk & Toko Kopi".toUpperCase()}
+      >
+
+<ContentArticle
+              articleTitle=''
+              article={korelasi.content[0].content[0]}
+              contentType={korelasi.content[0].type}
+            />
+
+
       </Section>
 
       <ContributorSection />
